@@ -25,7 +25,6 @@ linter:
     - always_declare_return_types
     - always_put_control_body_on_new_line
 
-    - always_require_non_null_named_parameters
     - annotate_overrides
     - avoid_empty_else
     - avoid_field_initializers_in_const_classes
