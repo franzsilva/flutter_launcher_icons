@@ -20,6 +20,13 @@ void main() {
     );
   });
 
+  test('Adaptive icon color', () {
+    //for file not in only png format
+    expect(android.isAdaptiveIconConfigColor('assets/icons/adaptive_icon_background.jpg'), equals(false));
+    //for color bg
+    expect(android.isAdaptiveIconConfigColor('#FFFFFF'), equals(true));
+  });
+
   test('Correct number of adaptive foreground icons', () {
     expect(android.adaptiveForegroundIcons.length, 5);
   });
@@ -79,13 +86,9 @@ void main() {
     });
   });
 
-  test(
-      'Transforming manifest with icon already in place should leave it unchanged',
-      () async {
-    final String inputManifest =
-        getAndroidManifestExample('android:icon="@mipmap/ic_launcher"');
-    final String expectedManifest =
-        getAndroidManifestExample('android:icon="@mipmap/ic_launcher"');
+  test('Transforming manifest with icon already in place should leave it unchanged', () async {
+    final String inputManifest = getAndroidManifestExample('android:icon="@mipmap/ic_launcher"');
+    final String expectedManifest = getAndroidManifestExample('android:icon="@mipmap/ic_launcher"');
 
     await withTempFile('AndroidManifest.xml', (File androidManifestFile) async {
       androidManifestFile.writeAsStringSync(inputManifest);
@@ -97,11 +100,8 @@ void main() {
     });
   });
 
-  test(
-      'Transforming manifest with trailing newline should keep newline untouched',
-      () async {
-    final String inputManifest =
-        getAndroidManifestExample('android:icon="@mipmap/ic_launcher"') + '\n';
+  test('Transforming manifest with trailing newline should keep newline untouched', () async {
+    final String inputManifest = getAndroidManifestExample('android:icon="@mipmap/ic_launcher"') + '\n';
     final String expectedManifest = inputManifest;
 
     await withTempFile('AndroidManifest.xml', (File androidManifestFile) async {
@@ -114,12 +114,8 @@ void main() {
     });
   });
 
-  test(
-      'Transforming manifest with 3 trailing newlines should keep newlines untouched',
-      () async {
-    final String inputManifest =
-        getAndroidManifestExample('android:icon="@mipmap/ic_launcher"') +
-            '\n\n\n';
+  test('Transforming manifest with 3 trailing newlines should keep newlines untouched', () async {
+    final String inputManifest = getAndroidManifestExample('android:icon="@mipmap/ic_launcher"') + '\n\n\n';
     final String expectedManifest = inputManifest;
 
     await withTempFile('AndroidManifest.xml', (File androidManifestFile) async {
@@ -132,12 +128,10 @@ void main() {
     });
   });
 
-  test(
-      'Transforming manifest with special newline characters should leave special newline characters untouched',
+  test('Transforming manifest with special newline characters should leave special newline characters untouched',
       () async {
     final String inputManifest =
-        getAndroidManifestExample('android:icon="@mipmap/ic_launcher"')
-            .replaceAll('\n', '\r\n');
+        getAndroidManifestExample('android:icon="@mipmap/ic_launcher"').replaceAll('\n', '\r\n');
     final String expectedManifest = inputManifest;
 
     await withTempFile('AndroidManifest.xml', (File androidManifestFile) async {

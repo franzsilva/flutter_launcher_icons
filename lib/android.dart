@@ -116,7 +116,7 @@ void createAdaptiveIcons(
   }
 
   // Create adaptive icon background
-  if (isAdaptiveIconConfigPngFile(backgroundConfig)) {
+  if (!isAdaptiveIconConfigColor(backgroundConfig)) {
     _createAdaptiveBackgrounds(
       config,
       backgroundConfig,
@@ -172,7 +172,7 @@ void createMipmapXmlFile(
   String xmlContent = '';
 
   if (config.hasAndroidAdaptiveConfig) {
-    if (isAdaptiveIconConfigPngFile(config.adaptiveIconBackground!)) {
+    if (!isAdaptiveIconConfigColor(config.adaptiveIconBackground!)) {
       xmlContent +=
           '  <background android:drawable="@drawable/ic_launcher_background"/>\n';
     } else {
@@ -471,8 +471,8 @@ int? _getMinSdkFlutterGradle(File localPropertiesFile) {
 }
 
 /// Returns true if the adaptive icon configuration is a PNG image
-bool isAdaptiveIconConfigPngFile(String backgroundFile) {
-  return backgroundFile.endsWith('.png');
+bool isAdaptiveIconConfigColor(String backgroundFile) {
+  return backgroundFile.startsWith('#');
 }
 
 /// (NOTE THIS IS JUST USED FOR UNIT TEST)
