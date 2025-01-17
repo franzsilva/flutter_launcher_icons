@@ -47,6 +47,7 @@ void main() {
           equals(<String, dynamic>{
             'generate': true,
             'image_path': 'app_icon.png',
+            'image_path_favicon': null,
             'background_color': '#0175C2',
             'theme_color': '#0175C2',
           }),
@@ -155,6 +156,7 @@ void main() {
           equals(<String, dynamic>{
             'generate': true,
             'image_path': 'app_icon.png',
+            'image_path_favicon': 'app_icon.png',
             'background_color': '#0175C2',
             'theme_color': '#0175C2',
           }),
@@ -238,6 +240,7 @@ void main() {
           equals(<String, dynamic>{
             'generate': true,
             'image_path': 'app_icon.png',
+            'image_path_favicon': null,
             'background_color': '#0175C2',
             'theme_color': '#0175C2',
           }),

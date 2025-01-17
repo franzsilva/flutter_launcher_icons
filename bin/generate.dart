@@ -103,6 +103,7 @@ flutter_launcher_icons:
   web:
     generate: true
     image_path: "path/to/image.png"
+    # image_path_favicon: "assets/icon/icon-favicon.png"
     background_color: "#hexcode"
     theme_color: "#hexcode"
 

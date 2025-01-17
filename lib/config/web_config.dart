@@ -15,6 +15,10 @@ class WebConfig {
   @JsonKey(name: 'image_path')
   final String? imagePath;
 
+  /// Override image path for favicon
+  @JsonKey(name: 'image_path_favicon')
+  final String? imagePathFavicon;
+
   /// manifest.json's background_color
   @JsonKey(name: 'background_color')
   final String? backgroundColor;
@@ -27,6 +31,7 @@ class WebConfig {
   const WebConfig({
     this.generate = false,
     this.imagePath,
+    this.imagePathFavicon,
     this.backgroundColor,
     this.themeColor,
   });

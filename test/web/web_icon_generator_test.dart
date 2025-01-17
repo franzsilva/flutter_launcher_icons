@@ -30,6 +30,7 @@ void main() {
         d.file('flutter_launcher_icons.yaml', templates.fliWebConfig),
         d.file('pubspec.yaml', templates.pubspecTemplate),
         d.file('app_icon.png', imageFile.readAsBytesSync()),
+        d.file('app_icon_favicon.png', imageFile.readAsBytesSync()),
       ]).create();
       prefixPath = path.join(d.sandbox, 'fli_test');
       config = Config.loadConfigFromPath(

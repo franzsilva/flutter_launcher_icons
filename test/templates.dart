@@ -119,6 +119,7 @@ flutter_launcher_icons:
   web:
     generate: true
     image_path: "app_icon.png" # filepath
+    image_path_favicon: "app_icon.png" # filepath
     background_color: "#0175C2" # hex_color
     theme_color: "#0175C2" # hex_color
     apple_mobile_web_app_title: "demo"
