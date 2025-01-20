@@ -163,13 +163,13 @@ class MockWindowsConfig extends _i1.Mock implements _i5.WindowsConfig {
       ) as bool);
 
   @override
-  Map<dynamic, dynamic> toJson() => (super.noSuchMethod(
+  Map<String, dynamic> toJson() => (super.noSuchMethod(
         Invocation.method(
           #toJson,
           [],
         ),
-        returnValue: <dynamic, dynamic>{},
-      ) as Map<dynamic, dynamic>);
+        returnValue: <String, dynamic>{},
+      ) as Map<String, dynamic>);
 }
 
 /// A class which mocks [FLILogger].

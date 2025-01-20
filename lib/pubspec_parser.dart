@@ -9,10 +9,10 @@ class PubspecParser {
   PubspecParser._();
 
   /// parses the pubspec located at [path] to map
-  static Map fromPathToMap(String path) {
+  static Map<dynamic, dynamic> fromPathToMap(String path) {
     final File file = File(path);
     final String yamlString = file.readAsStringSync();
-    final Map yamlMap = loadYaml(yamlString);
+    final Map<dynamic, dynamic> yamlMap = loadYaml(yamlString);
     return yamlMap;
   }
 }

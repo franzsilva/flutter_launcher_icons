@@ -1,6 +1,9 @@
 analyzer:
-  strong-mode:
-    implicit-dynamic: false
+  language:
+    # strict-casts: true 11 issues found
+    strict-inference: true
+    strict-raw-types: true
+
   errors:
     # treat missing required parameters as a warning (not a hint)
     missing_required_param: warning
@@ -20,12 +23,9 @@ analyzer:
 
 linter:
   rules:
-    # See all available options here
-    # https://github.com/dart-lang/linter/blob/master/example/all.yaml
+    # See all available options at https://dart.dev/lints
     - always_declare_return_types
     - always_put_control_body_on_new_line
-
-    - always_require_non_null_named_parameters
     - annotate_overrides
     - avoid_empty_else
     - avoid_field_initializers_in_const_classes
