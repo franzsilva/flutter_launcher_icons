@@ -151,6 +151,10 @@ Create a Flutter Launcher Icons configuration file for your flavor. The config f
 
 The configuration file format is the same.
 
+After running the icon generation you'll have to set the wished icon for your configuration in XCode project for your main target under `Build Settings` > `Asset Catalog App Icon Set Name`.
+
+[![XCode Build Settings Example](https://i.imgur.com/HxiAHlj.png)]()
+
 An example project with flavor support enabled [has been added to the examples](https://github.com/fluttercommunity/flutter_launcher_icons/tree/master/example/flavors).
 
 ## :question: Troubleshooting
